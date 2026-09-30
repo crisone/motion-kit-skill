@@ -1,0 +1,106 @@
+[
+  {
+    "id": "paper-highlight-v1",
+    "name": "论文逐行高亮",
+    "category": "论文证据",
+    "input": "pdf",
+    "description": "自动定位 PDF 原句，推近并逐行画出高亮。",
+    "defaults": {}
+  },
+  {
+    "id": "paper-focus-v1",
+    "name": "论文聚焦",
+    "category": "论文证据",
+    "input": "pdf",
+    "description": "用完整聚光框突出一个段落，让周围内容渐暗。",
+    "defaults": {
+      "highlightOpacity": 0,
+      "padding": 8
+    }
+  },
+  {
+    "id": "quote-card-v1",
+    "name": "观点引用卡",
+    "category": "观点表达",
+    "input": "text",
+    "description": "让关键观点以引用卡片的形式进入画面。",
+    "defaults": {
+      "quote": "把复杂的知识，讲得清楚。",
+      "caption": "一个值得展开的观点"
+    }
+  },
+  {
+    "id": "stat-counter-v1",
+    "name": "数字强调",
+    "category": "数据表达",
+    "input": "number",
+    "description": "数字从起点增长到目标值，配合单位与解释。",
+    "defaults": {
+      "value": 95,
+      "unit": "%",
+      "caption": "在这里解释这个数字"
+    }
+  },
+  {
+    "id": "page-turn-v1",
+    "name": "柔纸翻页",
+    "category": "视频转场",
+    "input": "videos",
+    "description": "视频 A 像柔软纸张卷起，露出继续播放的视频 B。",
+    "defaults": {
+      "transitionDuration": 1,
+      "curl": 0.5,
+      "shadow": 0.4,
+      "direction": "left",
+      "focusBlur": 18
+    }
+  },
+  {
+    "id": "paper-magnifier-v1",
+    "name": "文档局部放大镜",
+    "category": "论文证据",
+    "input": "pdf",
+    "description": "从原文展开矩形放大窗，背景压暗；固定窗口同步放大滚动文档。",
+    "defaults": {
+      "zoom": 2.6,
+      "dim": 0.55,
+      "shadow": 0.5,
+      "duration": 6
+    }
+  },
+  {
+    "id": "video-magnifier-v1",
+    "name": "视频局部放大镜",
+    "category": "视频强调",
+    "input": "video",
+    "description": "选取视频中的位置，先高亮提示，再展开局部放大窗。",
+    "defaults": {
+      "zoom": 2.5,
+      "dim": 0.4,
+      "shadow": 0.5,
+      "start": 0.5,
+      "cueDuration": 0.6,
+      "entrance": 0.5,
+      "lensWidth": 30,
+      "lensHeight": 35,
+      "sampleX": 50,
+      "sampleY": 50,
+      "lensX": 50,
+      "lensY": 50
+    }
+  },
+  {
+    "id": "timeline-v1",
+    "name": "时间线",
+    "category": "叙事与历程",
+    "input": "timeline",
+    "description": "路径逐段推进，新节点亮起、旧节点淡出强调；用样式代码切换横竖布局与视觉风格。",
+    "defaults": {
+      "duration": 8,
+      "entrance": 0.7,
+      "start": 0.5,
+      "caption": "从问题到成果",
+      "sourceLabel": "研究进展 · 示例"
+    }
+  }
+]

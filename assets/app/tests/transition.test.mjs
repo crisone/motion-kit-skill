@@ -1,0 +1,7 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {defaults,transitionSettings,applyChange} from '../server/model.mjs';
+const media={a:{frames:150},b:{frames:150}};
+test('five second clips overlap by exactly one second',()=>{const s=transitionSettings(defaults,media);assert.equal(s.duration,9);assert.equal(s.start,4);assert.equal(s.entrance,1)});
+test('transition rounds to frames and cannot exceed either clip',()=>{assert.equal(transitionSettings({...defaults,transitionDuration:1.01},media).transitionDuration,1);assert.throws(()=>transitionSettings({...defaults,transitionDuration:6},media));assert.throws(()=>transitionSettings({...defaults,transitionDuration:0},media))});
+test('changing overlap recomputes duration without bypassing locks',()=>{const p={template:'page-turn-v1',revision:1,settings:transitionSettings(defaults,media),media,locks:[]};const r=applyChange(p,{revision:1,patch:{transitionDuration:2}});assert.equal(r.settings.duration,8);assert.equal(r.settings.start,3);assert.throws(()=>applyChange({...p,locks:['transitionDuration']},{revision:1,patch:{transitionDuration:2}}),e=>e.status===423);assert.throws(()=>applyChange(p,{revision:1,patch:{duration:10}}));});
+test('full-length overlap works for clips shorter than two seconds',()=>{assert.equal(transitionSettings({...defaults,transitionDuration:.5},{a:{frames:15},b:{frames:15}}).duration,.5)});

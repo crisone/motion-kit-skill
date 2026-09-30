@@ -1,0 +1,32 @@
+{
+  "name": "paper-motion",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server/index.mjs",
+    "build": "vite build",
+    "check": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "agent": "node scripts/agent.mjs",
+    "test:pdf": "node --env-file-if-exists=.env scripts/test-pdf.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.527",
+    "@remotion/player": "4.0.527",
+    "@remotion/renderer": "4.0.527",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "express": "5.2.1",
+    "multer": "2.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.527",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "zod": "4.6.5"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

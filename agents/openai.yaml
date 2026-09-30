@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Kit 视频特效"
+  short_description: "用自然语言生成视频特效，在本地网页微调并导出到 Final Cut 或 Premiere"
+  default_prompt: "使用 $motion-kit 帮我创建视频特效，并提供网页预览与微调链接。"

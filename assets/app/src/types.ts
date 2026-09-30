@@ -1,0 +1,8 @@
+import type {z} from 'zod';
+import type {timelineStyleSchema,timelineEventsSchema} from '../shared/timeline';
+export type Rect={x:number;y:number;width:number;height:number};
+export type Media={id:string;name:string;frames:number;duration:number;baseUrl:string;audioUrl:string|null};
+export type Settings={timelineStyle:z.infer<typeof timelineStyleSchema>;timelineEvents:z.infer<typeof timelineEventsSchema>;cueDuration:number;lensX:number;lensY:number;lensWidth:number;lensHeight:number;sampleX:number;sampleY:number;scrollY:number;scrollStart:number;scrollDuration:number;transitionDuration:number;focusBlur:number;curl:number;shadow:number;direction:'left'|'right'|'bottom-right';audioMode:'crossfade'|'mute';quote:string;value:number;fromValue:number;decimals:number;unit:string;dim:number;highlightOpacity:number;highlightColor:string;zoom:number;padding:number;focusX:number;focusY:number;duration:number;start:number;entrance:number;caption:string;sourceLabel:string;fontSize:number};
+export type Match={page:number;startChar:number;endChar:number;quote:string;rects:Rect[];context:string;method:string};
+export type Project={video?:Media;media?:{a:Media;b:Media};name?:string;workspaceId?:string;status?:string;id:string;version:number;template:string;revision:number;documentId:string;documentName:string;page:{number:number;width:number;height:number;imageUrl:string};selection:Match;query:string;settings:Settings;locks:(keyof Settings)[];createdAt:string;updatedAt:string;lastActor:'user'|'agent'};
+export type Document={id:string;name:string;title:string;pageCount:number;warnings:string[]};

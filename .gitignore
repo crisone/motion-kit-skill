@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+data/
+outputs/
+dist/
+.remotion-bundle*/
+__pycache__/
+*.pyc
+.DS_Store
